@@ -25,6 +25,10 @@
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Send" />
+            <item
+                android:id="@+id/nav_Options"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Ajustes Usuario" />
         </menu>
     </item>
 

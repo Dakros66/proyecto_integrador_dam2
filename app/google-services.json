@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "291368493469",
+    "firebase_url": "https://proyectointegrador2dam.firebaseio.com",
+    "project_id": "proyectointegrador2dam",
+    "storage_bucket": "proyectointegrador2dam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291368493469:android:37630ed7b1a7b616",
+        "android_client_info": {
+          "package_name": "com.example.a21624926.proyectointegrador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291368493469-gl1698bopn1mooafp8b1v1sv17efpjin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdcDWis3H9Q3pq6PA4_jW55YUxzJm7nKc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

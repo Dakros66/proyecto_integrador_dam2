@@ -4,5 +4,34 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Opciones</string>
+
+    <string name="action_sign_in_short">Registrarse</string>
+    <string name="email">Email</string>
+    <string name="minimum_password">Contraseña demasiado corta, introduzca al menos 6 caracteres!</string>
+    <string name="auth_failed">Autenticacion fallida, compruebe su usuario, contraseña o registrese</string>
+    <string name="change_email">Cambiar Email</string>
+    <string name="change_password">Datos Personales</string>
+    <string name="send_password_reset_email">Email actualización de contraseña</string>
+    <string name="remove_user">Borrar usuario</string>
+    <string name="new_pass">Nueva contraseña</string>
+    <string name="title_activity_profile">Firebase</string>
+    <string name="title_activity_login">Registrarse</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="hint_name">Nombre Completo</string>
+    <string name="btn_login">Iniciar Sesión</string>
+    <string name="btn_link_to_register">¿No eres usuario? Registrate ahora!</string>
+    <string name="btn_link_to_login">Ya registrado. Logueame!</string>
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
+    <string name="btn_forgot_password">He olvidado mi contraseña</string>
+    <string name="btn_reset_password">Resetear contraseña</string>
+    <string name="btn_back"><![CDATA[<< Back]]></string>
+    <string name="hint_new_email">Nuevo Email</string>
+    <string name="btn_change">Cambiar</string>
+    <string name="btn_send">Enviar</string>
+    <string name="btn_remove">Borrar</string>
+    <string name="btn_sign_out">Desconectarse</string>
+    <string name="lbl_forgot_password">Contraseña perdida?</string>
+    <string name="forgot_password_msg">Indiquenos su email registrado para obtener las instrucciones de cambio de contraseña.</string>
 </resources>
