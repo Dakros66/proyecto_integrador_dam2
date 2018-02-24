@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.robertoracancoj.proyectointegrador2dam.R;
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.actividades.MainActivity;
+import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.adaptadores.holders.LoadViewHolder;
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.adaptadores.holders.PostViewHolder;
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.enums.TipoItem;
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.listener.OnPostListChangedListener;
