@@ -17,11 +17,12 @@
 
 package com.example.robertoracancoj.proyectointegrador2dam.componentesApp.listener;
 
+import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.modelo.PostListResult;
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.modelo.PostListaResult;
 
 public interface OnPostListChangedListener<Post> {
 
-    public void onListChanged(PostListaResult result);
+    public void onListChanged(PostListResult result);
 
     void onCanceled(String message);
 }

@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.example.robertoracancoj.proyectointegrador2dam.R;
+import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.enums.ProfileStatus;
 
 /**
  * Created by robertoracancoj on 2/24/18.

@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.enums.UploadImagePrefix;
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.listener.OnDataChangedListener;
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.listener.OnObjectExistListener;
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.listener.OnPostChangedListener;
@@ -12,6 +13,8 @@ import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.listene
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.listener.OnPostListChangedListener;
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.listener.OnTaskCompleteListener;
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.modelo.Post;
+import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.utils.ImageUtil;
+import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.vista.ApplicationHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -93,7 +96,7 @@ public class PostManager extends FirebaseListenersManager{
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     // taskSnapshot.getMetadata() contains file metadata such as size, content-type, and download URL.
                     Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                    LogUtil.logDebug(TAG, "successful upload image, image url: " + String.valueOf(downloadUrl));
+                    Log.d(TAG, "successful upload image, image url: " + String.valueOf(downloadUrl));
 
                     post.setImagePath(String.valueOf(downloadUrl));
                     post.setImageTitle(imageTitle);
@@ -122,15 +125,15 @@ public class PostManager extends FirebaseListenersManager{
                     public void onComplete(@NonNull Task<Void> task) {
                         onTaskCompleteListener.onTaskComplete(task.isSuccessful());
                         databaseHelper.updateProfileLikeCountAfterRemovingPost(post);
-                        LogUtil.logDebug(TAG, "removePost(), is success: " + task.isSuccessful());
+                        Log.d(TAG, "removePost(), is success: " + task.isSuccessful());
                     }
                 });
-                LogUtil.logDebug(TAG, "removeImage(): success");
+                Log.d(TAG, "removeImage(): success");
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
-                LogUtil.logError(TAG, "removeImage()", exception);
+                Log.e(TAG, "removeImage()", exception);
                 onTaskCompleteListener.onTaskComplete(false);
             }
         });
@@ -141,16 +144,8 @@ public class PostManager extends FirebaseListenersManager{
         databaseHelper.addComplainToPost(post);
     }
 
-    public void hasCurrentUserLike(Context activityContext, String postId, String userId, final OnObjectExistListener<Like> onObjectExistListener) {
-        DatabaseHelper databaseHelper = ApplicationHelper.getDatabaseHelper();
-        ValueEventListener valueEventListener = databaseHelper.hasCurrentUserLike(postId, userId, onObjectExistListener);
-        addListenerToMap(activityContext, valueEventListener);
-    }
 
-    public void hasCurrentUserLikeSingleValue(String postId, String userId, final OnObjectExistListener<Like> onObjectExistListener) {
-        DatabaseHelper databaseHelper = ApplicationHelper.getDatabaseHelper();
-        databaseHelper.hasCurrentUserLikeSingleValue(postId, userId, onObjectExistListener);
-    }
+
 
     public void isPostExistSingleValue(String postId, final OnObjectExistListener<Post> onObjectExistListener) {
         DatabaseHelper databaseHelper = ApplicationHelper.getDatabaseHelper();

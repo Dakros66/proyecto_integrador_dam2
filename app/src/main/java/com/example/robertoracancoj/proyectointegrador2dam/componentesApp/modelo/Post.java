@@ -1,9 +1,12 @@
 package com.example.robertoracancoj.proyectointegrador2dam.componentesApp.modelo;
 
 import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.enums.TipoItem;
+import com.example.robertoracancoj.proyectointegrador2dam.componentesApp.utils.FormatterUtil;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by robertoracancoj on 2/24/18.
@@ -121,6 +124,25 @@ public class Post implements Serializable {
 
     public void setHasComplain(boolean hasComplain) {
         this.hasComplain = hasComplain;
+    }
+
+
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+
+        result.put("title", title);
+        result.put("description", description);
+        result.put("createdDate", createdDate);
+        result.put("imagePath", imagePath);
+        result.put("imageTitle", imageTitle);
+        result.put("authorId", authorId);
+        result.put("commentsCount", commentsCount);
+        result.put("likesCount", likesCount);
+        result.put("watchersCount", watchersCount);
+        result.put("hasComplain", hasComplain);
+       result.put("createdDateText", FormatterUtil.getFirebaseDateFormat().format(new Date(createdDate)));
+
+        return result;
     }
 
     public TipoItem getItemType() {
